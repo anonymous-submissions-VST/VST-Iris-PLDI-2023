@@ -1296,12 +1296,14 @@ Proof.
     { repeat (split; auto); try rep_lia. eapply List.Forall_impl, H1. intros (?, ?); auto. }
     Intros b h'.
     forward_if (temp _total (vint (Zlength (List.filter id (ls ++ [b]))))).
-    + pose proof (Zlength_filter id ls).
+    + destruct b; try discriminate.
+      pose proof (Zlength_filter id ls).
       forward.
       entailer!.
       rewrite List.filter_app; simpl.
       rewrite -> Zlength_app, Zlength_cons, Zlength_nil; auto.
-    + forward.
+    + destruct b; try discriminate.
+      forward.
       entailer!.
       rewrite List.filter_app; simpl.
       rewrite -> Zlength_app, Zlength_nil, Z.add_0_r; auto.
