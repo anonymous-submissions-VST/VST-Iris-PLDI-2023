@@ -14,7 +14,6 @@
 # Emacs saves
 *~
 # Executables and configuration
-CONFIGURE
 VST.config
 compcert/ccomp
 compcert/ccomp.byte
@@ -96,3 +95,4 @@ lib/.CoqMakefile.d
 lib/proof/math_extern.v
 lib/proof/malloc_extern.v
 lib/proof/SC_atomics_extern.v
+wand_demo/vfa/CONFIGURE
